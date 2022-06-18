@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:tap_voucher/screens/home.dart';
 import 'package:tap_voucher/values/app_assets.dart';
 import 'package:tap_voucher/values/app_colors.dart';
-import 'package:tap_voucher/values/app_fonts.dart';
 import 'package:tap_voucher/widgets/app_bar/app_bar_main.dart';
 
 class LoginPage extends StatefulWidget {

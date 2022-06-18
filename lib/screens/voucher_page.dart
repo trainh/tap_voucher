@@ -28,7 +28,7 @@ class _VoucherPageState extends State<VoucherPage> {
       Container(
         width: 100,
         height: 100,
-        color: Color.fromARGB(255, 3, 10, 22),
+        color: const Color.fromARGB(255, 3, 10, 22),
       ),
     ];
     return Scaffold(

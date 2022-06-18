@@ -45,6 +45,7 @@ class ListVoucherHorizontal extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => ListVoucher(
                       title: typeVoucher,
+                      listVoucher: listVoucher,
                     ),
                   ),
                 );

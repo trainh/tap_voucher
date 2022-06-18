@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tap_voucher/data/list_voucher.dart';
-import 'package:tap_voucher/screens/list_voucher.dart';
-import 'package:tap_voucher/values/app_assets.dart';
-import 'package:tap_voucher/values/app_colors.dart';
 import 'package:tap_voucher/widgets/app_bar/app_bar_home_page.dart';
 import 'package:tap_voucher/widgets/lists/list_voucher_horizontal.dart';
 
@@ -26,11 +23,11 @@ class _HomePageState extends State<HomePage> {
           ),
           ListVoucherHorizontal(
             typeVoucher: 'Nhận voucher của quán mới',
-            listVoucher: getListVoucherGetNow(),
+            listVoucher: getListVoucherNewStore(),
           ),
           ListVoucherHorizontal(
             typeVoucher: 'Nhận voucher của dịch vụ khác',
-            listVoucher: getListVoucherGetNow(),
+            listVoucher: getListVoucherOtherService(),
           ),
           ListVoucherHorizontal(
             typeVoucher: 'Nhận voucher ngay bây giờ',

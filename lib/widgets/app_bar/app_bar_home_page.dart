@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:tap_voucher/data/list_voucher.dart';
 import 'package:tap_voucher/screens/list_voucher.dart';
 import 'package:tap_voucher/values/app_assets.dart';
 import 'package:tap_voucher/values/app_colors.dart';
@@ -30,9 +28,9 @@ class AppBarHomePage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              const ListVoucher(title: 'hihi'),
-                        ),
+                            builder: (context) => ListVoucher(
+                                title: 'hihi',
+                                listVoucher: getListVoucherGetNow())),
                       );
                     },
                     icon: const Icon(
