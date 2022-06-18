@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:tap_voucher/screens/history_page.dart';
@@ -41,9 +39,11 @@ class _HomeState extends State<Home> {
         ],
         initialActiveIndex: 0,
         onTap: (int i) {
-          setState(() {
-            posPage = i;
-          });
+          setState(
+            () {
+              posPage = i;
+            },
+          );
         },
       ),
     );

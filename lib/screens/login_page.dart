@@ -4,6 +4,7 @@ import 'package:tap_voucher/screens/home.dart';
 import 'package:tap_voucher/values/app_assets.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 import 'package:tap_voucher/values/app_fonts.dart';
+import 'package:tap_voucher/widgets/app_bar/app_bar_main.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -35,43 +36,7 @@ class _LoginPageState extends State<LoginPage> {
           color: AppColor.primaryColor,
           child: Column(
             children: [
-              SizedBox(
-                width: double.infinity,
-                height: size.height * 3 / 10,
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 3,
-                      child: Container(
-                        color: AppColor.secondColor,
-                        alignment: Alignment.bottomCenter,
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                            left: 20,
-                            bottom: 20,
-                          ),
-                          child: Text(
-                            'Đăng Nhập',
-                            style: AppStyles.h4.copyWith(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 5,
-                      child: Container(
-                        color: AppColor.secondColor,
-                        child: Image.asset(
-                          AppAssets.logo,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              const AppBarMain(title: 'Đăng Nhập'),
               SizedBox(
                 height: size.height * 7 / 10,
                 child: showLoginPassword
