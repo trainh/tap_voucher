@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:tap_voucher/models/voucher.dart';
 import 'package:tap_voucher/values/app_colors.dart';
-import 'package:tap_voucher/widgets/lists/list_vouucher_vertical.dart';
+import 'package:tap_voucher/widgets/lists/list_voucher_vertical.dart';
 import 'package:tap_voucher/widgets/text_fields/text_field_search.dart';
 
-class ListVoucher extends StatefulWidget {
-  const ListVoucher({Key? key, required this.title, required this.listVoucher})
+class ListVoucherNotGet extends StatefulWidget {
+  const ListVoucherNotGet(
+      {Key? key, required this.title, required this.listVoucher})
       : super(key: key);
   final String title;
   final List<Voucher> listVoucher;
 
   @override
-  State<ListVoucher> createState() => _ListVoucherState();
+  State<ListVoucherNotGet> createState() => _ListVoucherNotGetState();
 }
 
-class _ListVoucherState extends State<ListVoucher> {
+class _ListVoucherNotGetState extends State<ListVoucherNotGet> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

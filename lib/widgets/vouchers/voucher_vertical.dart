@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tap_voucher/models/voucher.dart';
-import 'package:tap_voucher/screens/details_voucher.dart';
+import 'package:tap_voucher/widgets/lists/details_voucher.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 
 class VoucerVertical extends StatelessWidget {

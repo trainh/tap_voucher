@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tap_voucher/models/voucher.dart';
-import 'package:tap_voucher/screens/list_voucher.dart';
+import 'package:tap_voucher/widgets/lists/list_voucher_not_get.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 import 'package:tap_voucher/values/app_fonts.dart';
 import 'package:tap_voucher/widgets/vouchers/voucher_vertical.dart';
@@ -43,7 +43,7 @@ class ListVoucherHorizontal extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ListVoucher(
+                    builder: (context) => ListVoucherNotGet(
                       title: typeVoucher,
                       listVoucher: listVoucher,
                     ),

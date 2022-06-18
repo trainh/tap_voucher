@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:tap_voucher/data/list_voucher_used.dart';
+import 'package:tap_voucher/data/list_voucher_used_yet.dart';
 import 'package:tap_voucher/values/app_colors.dart';
+import 'package:tap_voucher/widgets/lists/list_voucher_not_used_yet.dart';
+import 'package:tap_voucher/widgets/lists/list_voucher_used.dart';
 
 class VoucherPage extends StatefulWidget {
   const VoucherPage({Key? key}) : super(key: key);
@@ -15,21 +19,8 @@ class _VoucherPageState extends State<VoucherPage> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> listWidget = [
-      Container(
-        width: 100,
-        height: 100,
-        color: Colors.amber,
-      ),
-      Container(
-        width: 100,
-        height: 100,
-        color: Colors.blueAccent,
-      ),
-      Container(
-        width: 100,
-        height: 100,
-        color: const Color.fromARGB(255, 3, 10, 22),
-      ),
+      ListVoucherNotUsedYet(listVoucher: getListVoucherUserYet()),
+      ListVoucherUsed(listVoucher: getListVoucherUsed()),
     ];
     return Scaffold(
       appBar: AppBar(
@@ -67,14 +58,6 @@ class _VoucherPageState extends State<VoucherPage> {
                 title: const Text("Đã sửa dụng"),
                 selectedColor: Colors.teal,
               ),
-
-              SalomonBottomBarItem(
-                icon: const Icon(Icons.search),
-                title: const Text("Tìm kiếm"),
-                selectedColor: Colors.orange,
-              ),
-
-              /// Profile
             ],
           ),
           listWidget[indexPage],

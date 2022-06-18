@@ -3,8 +3,8 @@ import 'package:tap_voucher/models/voucher.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 import 'package:tap_voucher/widgets/vouchers/voucher_used_details.dart';
 
-class ListVoucherVertical extends StatelessWidget {
-  const ListVoucherVertical({Key? key, required this.listVoucher})
+class ListVoucherUsed extends StatelessWidget {
+  const ListVoucherUsed({Key? key, required this.listVoucher})
       : super(key: key);
   final List<Voucher> listVoucher;
   @override
