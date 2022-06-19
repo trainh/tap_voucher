@@ -255,6 +255,24 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.only(top: 24),
+          child: Center(
+            child: InkWell(
+              child: const Text(
+                'Chưa có mật khẩu',
+                style: TextStyle(
+                  color: Colors.blueAccent,
+                ),
+              ),
+              onTap: () {
+                setState(() {
+                  showLoginPassword = false;
+                });
+              },
+            ),
+          ),
+        ),
       ],
     );
   }
