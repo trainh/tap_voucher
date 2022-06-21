@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tap_voucher/screens/forget_password.dart';
 import 'package:tap_voucher/screens/home.dart';
 import 'package:tap_voucher/values/app_assets.dart';
 import 'package:tap_voucher/values/app_colors.dart';
@@ -233,7 +234,14 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: TextDecoration.underline,
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ForgetPasswordPage(),
+                  ),
+                );
+              },
             ),
           ),
         ),
