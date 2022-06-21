@@ -48,13 +48,12 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
       ),
     );
   }
-
   Widget _buildCreatePassword1(String phoneNumber) {
     return Column(
       children: [
         Padding(
           padding:
-              const EdgeInsets.only(top: 60, right: 60, bottom: 48, left: 60),
+          const EdgeInsets.only(top: 60, right: 60, bottom: 48, left: 60),
           child: Column(
             children: [
               CircleAvatar(
@@ -78,6 +77,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
             ],
           ),
         ),
+
         Padding(
           padding: const EdgeInsets.only(
             top: 20,
@@ -106,6 +106,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
             ),
           ),
         ),
+
         Padding(
           padding: const EdgeInsets.only(top: 24),
           child: Center(
@@ -121,6 +122,111 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                   showCreatePassword = false;
                 });
               },
+            ),
+          ),
+        ),
+
+      ],
+    );
+  }
+  Widget _buildCreatePassword2(String phoneNumber) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(
+            left: 10,
+            right: 10,
+            top: 0,
+            bottom: 28,
+          ),
+          child: TextField(
+            obscureText: true,
+            enableSuggestions: false,
+            autocorrect: false,
+            decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  width: 1,
+                  color: AppColor.greyOulineTextFildColor,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  width: 1,
+                  color: AppColor.greyOulineTextFildColor,
+                ),
+              ),
+              hintText: 'Nhập mật khẩu mới',
+              hintStyle: const TextStyle(
+                color: AppColor.textHint,
+              ),
+            ),
+            keyboardType: TextInputType.number,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(
+            left: 10,
+            right: 10,
+            top: 0,
+            bottom: 28,
+          ),
+          child: TextField(
+            obscureText: true,
+            enableSuggestions: false,
+            autocorrect: false,
+            decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  width: 1,
+                  color: AppColor.greyOulineTextFildColor,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  width: 1,
+                  color: AppColor.greyOulineTextFildColor,
+                ),
+              ),
+              hintText: 'Nhập lại mật khẩu mới',
+              hintStyle: const TextStyle(
+                color: AppColor.textHint,
+              ),
+            ),
+            keyboardType: TextInputType.number,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 20,
+          ),
+          child: ElevatedButton(
+            onPressed: () {
+              setState(() {
+                showCreatePassword = true;
+              });
+            },
+            style: ElevatedButton.styleFrom(
+              primary: AppColor.buttonColor,
+              padding: const EdgeInsets.only(
+                left: 170,
+                right: 170,
+                bottom: 20,
+                top: 20,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15), // <-- Radius
+              ),
+            ),
+            child: const Text(
+              'Hoàn tất',
+              style: TextStyle(color: Colors.black),
             ),
           ),
         ),
