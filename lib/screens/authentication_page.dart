@@ -48,12 +48,13 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
       ),
     );
   }
+
   Widget _buildCreatePassword1(String phoneNumber) {
     return Column(
       children: [
         Padding(
           padding:
-          const EdgeInsets.only(top: 60, right: 60, bottom: 48, left: 60),
+              const EdgeInsets.only(top: 60, right: 60, bottom: 48, left: 60),
           child: Column(
             children: [
               CircleAvatar(
@@ -77,7 +78,6 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
             ],
           ),
         ),
-
         Padding(
           padding: const EdgeInsets.only(
             top: 20,
@@ -106,7 +106,6 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
             ),
           ),
         ),
-
         Padding(
           padding: const EdgeInsets.only(top: 24),
           child: Center(
@@ -125,7 +124,6 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
             ),
           ),
         ),
-
       ],
     );
   }
