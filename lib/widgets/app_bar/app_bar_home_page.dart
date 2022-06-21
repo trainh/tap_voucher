@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tap_voucher/data/list_voucher.dart';
 import 'package:tap_voucher/screens/menu_page.dart';
-import 'package:tap_voucher/widgets/lists/list_voucher_not_get.dart';
 import 'package:tap_voucher/values/app_assets.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 
@@ -111,7 +109,7 @@ class AppBarHomePage extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

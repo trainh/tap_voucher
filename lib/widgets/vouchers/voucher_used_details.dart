@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:tap_voucher/models/voucher.dart';
+import 'package:tap_voucher/screens/notice_page.dart';
+import 'package:tap_voucher/screens/review_page.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 import 'package:tap_voucher/values/app_fonts.dart';
 
@@ -314,14 +316,23 @@ class VoucherUsedDetails extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               width: 320,
               child: ElevatedButton.icon(
                 style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all(AppColor.secondColor),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReviewPage(
+                        voucher: voucher,
+                      ),
+                    ),
+                  );
+                },
                 label: const Text(
                   'Đánh giá',
                   style:
