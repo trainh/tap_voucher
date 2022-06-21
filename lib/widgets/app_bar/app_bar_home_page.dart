@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tap_voucher/screens/menu_page.dart';
+import 'package:tap_voucher/screens/notice_page.dart';
 import 'package:tap_voucher/values/app_assets.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 
@@ -50,7 +51,12 @@ class AppBarHomePage extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NoticePage()));
+                    },
                     icon: const Icon(
                       Icons.notifications_sharp,
                       size: 42,

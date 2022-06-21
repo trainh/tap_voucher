@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:tap_voucher/data/list_voucher.dart';
+import 'package:tap_voucher/data/list_voucher_used.dart';
 import 'package:tap_voucher/values/app_colors.dart';
+import 'package:tap_voucher/widgets/lists/details_voucher.dart';
+import 'package:tap_voucher/widgets/vouchers/voucher_not_used_yet_details.dart';
+import 'package:tap_voucher/widgets/vouchers/voucher_vertical.dart';
 
 class NoticePage extends StatelessWidget {
   const NoticePage({Key? key}) : super(key: key);
@@ -21,11 +26,61 @@ class NoticePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.only(left: 10, top: 10),
-            ),
-          ],
+          children: List.generate(
+            getListVoucherUsed().length,
+            (index) => (GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DetailsVoucher(
+                            voucher: getListVoucherUsed()[index])));
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      color: AppColor.secondColor,
+                      width: 2,
+                    ),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            WidgetSpan(
+                              child: Icon(
+                                Icons.discount,
+                                color: Colors.orange,
+                                size: 25,
+                              ),
+                            ),
+                            TextSpan(
+                              text:
+                                  '${getListVoucherUsed()[index].brand} có voucher mới',
+                              style: const TextStyle(
+                                color: AppColor.textButtonColor,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      padding: EdgeInsets.only(left: 40),
+                      child: Text(getListVoucherUsed()[index].sale),
+                    ),
+                  ],
+                ),
+              ),
+            )),
+          ),
         ),
       ),
     );
