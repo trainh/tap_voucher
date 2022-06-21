@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:tap_voucher/models/voucher.dart';
-import 'package:tap_voucher/screens/notice_page.dart';
 import 'package:tap_voucher/screens/review_page.dart';
+import 'package:tap_voucher/screens/see_review_page.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 import 'package:tap_voucher/values/app_fonts.dart';
 
@@ -105,52 +105,64 @@ class VoucherUsedDetails extends StatelessWidget {
                         ),
                       ),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            RichText(
-                              text: TextSpan(
-                                children: [
-                                  const WidgetSpan(
-                                    child: Icon(
-                                      Icons.star_outlined,
-                                      color: Color.fromARGB(255, 255, 238, 0),
-                                      size: 20,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: ' ${voucher.ponit}',
-                                    style: const TextStyle(
-                                      color: AppColor.textButtonColor,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                    child: GestureDetector(
+                      onTap: () => {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SeeReviewPage(
+                              voucher: voucher,
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 4.0),
-                              child: Text(
-                                '(${voucher.totalRating})',
-                                style: const TextStyle(
-                                  color: AppColor.textHint,
+                          ),
+                        ),
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              RichText(
+                                text: TextSpan(
+                                  children: [
+                                    const WidgetSpan(
+                                      child: Icon(
+                                        Icons.star_outlined,
+                                        color: Color.fromARGB(255, 255, 238, 0),
+                                        size: 20,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: ' ${voucher.ponit}',
+                                      style: const TextStyle(
+                                        color: AppColor.textButtonColor,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ),
-                            const Text(
-                              ' - Đánh giá và nhận xét',
-                              style: TextStyle(fontSize: 16),
-                            )
-                          ],
-                        ),
-                        const Icon(
-                          Icons.keyboard_arrow_right_rounded,
-                          size: 36,
-                        )
-                      ],
+                              Padding(
+                                padding: const EdgeInsets.only(left: 4.0),
+                                child: Text(
+                                  '(${voucher.totalRating})',
+                                  style: const TextStyle(
+                                    color: AppColor.textHint,
+                                  ),
+                                ),
+                              ),
+                              const Text(
+                                ' - Đánh giá và nhận xét',
+                                style: TextStyle(fontSize: 16),
+                              )
+                            ],
+                          ),
+                          const Icon(
+                            Icons.keyboard_arrow_right_rounded,
+                            size: 36,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Container(
