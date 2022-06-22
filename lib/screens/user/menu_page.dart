@@ -1,6 +1,9 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:tap_voucher/screens/login_page.dart';
+import 'package:tap_voucher/screens/user/login_page.dart';
+import 'package:tap_voucher/screens/user/service_page.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 
 class MenuPage extends StatelessWidget {
@@ -177,55 +180,68 @@ class MenuPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       _card(
+                        context,
                         'Thành Viên',
                         LineIcon.medal(
                           size: 40,
                         ),
                         Color.fromARGB(255, 255, 74, 74),
+                        ServicePage(),
                       ),
                       _card(
-                          'Tất cả dịch vụ',
-                          LineIcon.globe(
-                            size: 40,
-                          ),
-                          Color.fromARGB(255, 123, 195, 255))
+                        context,
+                        'Tất cả dịch vụ',
+                        LineIcon.globe(
+                          size: 40,
+                        ),
+                        Color.fromARGB(255, 123, 195, 255),
+                        ServicePage(),
+                      )
                     ],
                   ),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         _card(
+                          context,
                           'Hỗ trợ kỹ thuật trực tuyến',
                           LineIcon.home(
                             size: 40,
                           ),
                           const Color.fromARGB(255, 247, 229, 72),
+                          ServicePage(),
                         ),
                         _card(
+                          context,
                           'Các cửa hàng đã theo dỗi',
                           const Icon(
                             Icons.share_location_sharp,
                             size: 40,
                           ),
                           Color.fromARGB(255, 98, 233, 226),
+                          ServicePage(),
                         )
                       ]),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         _card(
+                          context,
                           'Đăng ký cửa hàng',
                           LineIcon.phone(
                             size: 40,
                           ),
                           const Color.fromARGB(255, 255, 128, 223),
+                          ServicePage(),
                         ),
                         _card(
+                          context,
                           'Góp ý - Khiếu nại',
                           LineIcon.facebookMessenger(
                             size: 40,
                           ),
                           const Color.fromARGB(255, 94, 243, 106),
+                          ServicePage(),
                         )
                       ]),
                 ],
@@ -259,60 +275,67 @@ class MenuPage extends StatelessWidget {
       ),
     );
   }
-}
 
-Widget _card(String titel, Icon icons, Color color) {
-  return Padding(
-    padding: const EdgeInsets.only(top: 28),
-    child: GestureDetector(
-      onTap: () {},
-      child: Row(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(14),
-              color: color,
+  Widget _card(BuildContext context, String titel, Icon icons, Color color,
+      Widget page) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 28),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MenuPage()),
+          );
+        },
+        child: Row(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14),
+                color: color,
+              ),
+              width: 70,
+              height: 70,
+              child: icons,
             ),
-            width: 70,
-            height: 70,
-            child: icons,
-          ),
-          Container(
-            width: 130,
-            padding: const EdgeInsets.only(left: 8.0),
-            child: Text(
-              titel,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            Container(
+              width: 130,
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(
+                titel,
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 
-Widget _infor(String title) {
-  return Container(
-    padding: const EdgeInsets.only(left: 20, top: 20),
-    alignment: Alignment.centerLeft,
-    child: RichText(
-      text: TextSpan(
-        children: [
-          const WidgetSpan(
-              child: Icon(
-            Icons.bookmark_outline,
-            color: AppColor.textBlueBack,
-            size: 30,
-          )),
-          TextSpan(
-            text: title,
-            style: const TextStyle(
-              color: AppColor.textButtonColor,
-              fontSize: 22,
+  Widget _infor(String title) {
+    return Container(
+      padding: const EdgeInsets.only(left: 20, top: 20),
+      alignment: Alignment.centerLeft,
+      child: RichText(
+        text: TextSpan(
+          children: [
+            const WidgetSpan(
+                child: Icon(
+              Icons.bookmark_outline,
+              color: AppColor.textBlueBack,
+              size: 30,
+            )),
+            TextSpan(
+              text: title,
+              style: const TextStyle(
+                color: AppColor.textButtonColor,
+                fontSize: 22,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
+    );
+  }
 }

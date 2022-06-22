@@ -18,20 +18,12 @@ class _HomePageState extends State<HomePage> {
         children: [
           const AppBarHomePage(),
           ListVoucherHorizontal(
-            typeVoucher: 'Nhận voucher ngay bây giờ',
+            typeVoucher: 'Voucher các quán gần bạn hôm nay',
             listVoucher: getListVoucherGetNow(),
           ),
           ListVoucherHorizontal(
-            typeVoucher: 'Nhận voucher của quán mới',
+            typeVoucher: 'Voucher các quán tại Hồ Chí Minh',
             listVoucher: getListVoucherNewStore(),
-          ),
-          ListVoucherHorizontal(
-            typeVoucher: 'Nhận voucher của dịch vụ khác',
-            listVoucher: getListVoucherOtherService(),
-          ),
-          ListVoucherHorizontal(
-            typeVoucher: 'Nhận voucher ngay bây giờ',
-            listVoucher: getListVoucherGetNow(),
           ),
         ],
       ),

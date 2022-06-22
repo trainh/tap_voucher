@@ -167,25 +167,29 @@ class DetailsVoucher extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            RichText(
-                              text: TextSpan(
-                                children: [
-                                  const WidgetSpan(
-                                    child: Icon(
-                                      Icons.access_time_filled,
-                                      color: Color.fromARGB(255, 255, 87, 101),
-                                      size: 20,
+                            Container(
+                              width: 420,
+                              child: RichText(
+                                text: TextSpan(
+                                  children: [
+                                    const WidgetSpan(
+                                      child: Icon(
+                                        Icons.access_time_filled,
+                                        color:
+                                            Color.fromARGB(255, 255, 87, 101),
+                                        size: 20,
+                                      ),
                                     ),
-                                  ),
-                                  TextSpan(
-                                    text:
-                                        ' ${voucher.beginTime} -> ${voucher.endTime}',
-                                    style: const TextStyle(
-                                      color: AppColor.textButtonColor,
-                                      fontSize: 18,
+                                    TextSpan(
+                                      text:
+                                          ' ${voucher.beginTime} -> ${voucher.endTime}',
+                                      style: const TextStyle(
+                                        color: AppColor.textButtonColor,
+                                        fontSize: 18,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ],
@@ -315,21 +319,34 @@ class DetailsVoucher extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              width: 320,
-              child: ElevatedButton.icon(
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(AppColor.secondColor),
-                ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 20,
+                left: 100,
+                right: 100,
+              ),
+              child: ElevatedButton(
                 onPressed: () {},
-                label: const Text(
-                  'Nhận mã',
-                  style:
-                      TextStyle(color: AppColor.textButtonColor, fontSize: 32),
+                style: ElevatedButton.styleFrom(
+                  primary: AppColor.buttonColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15), // <-- Radius
+                  ),
                 ),
-                icon: const Icon(Icons.qr_code,
-                    color: AppColor.textButtonColor, size: 40),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(
+                      Icons.qr_code,
+                      color: AppColor.textButtonColor,
+                      size: 48,
+                    ),
+                    Text(
+                      'Nhận Mã',
+                      style: TextStyle(color: Colors.black, fontSize: 28),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

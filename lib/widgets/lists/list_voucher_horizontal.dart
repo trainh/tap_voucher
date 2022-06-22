@@ -56,7 +56,7 @@ class ListVoucherHorizontal extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: List.generate(
-                listVoucher.length,
+                4,
                 (index) => VoucerVertical(voucher: listVoucher[index]),
               ),
             ),

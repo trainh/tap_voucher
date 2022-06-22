@@ -1,11 +1,8 @@
-// import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:tap_voucher/screens/home.dart';
+import 'package:tap_voucher/screens/user/home.dart';
+import 'package:tap_voucher/values/app_assets.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 import 'package:tap_voucher/widgets/app_bar/app_bar_main.dart';
-
-import '../values/app_assets.dart';
 
 class CreatePassword extends StatefulWidget {
   const CreatePassword({Key? key, required this.phoneNumber}) : super(key: key);
@@ -23,18 +20,27 @@ class _CreatePasswordState extends State<CreatePassword> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Container(
-        child: Column(
-          children: [
-            const AppBarMain(title: "Tạo mật khẩu"),
-            SizedBox(
-              height: size.height * 7 / 10,
-              child: warningCreatePassword == false
-                  ? _buildWarningCreatePassword(context)
-                  : _buildCreatePassword(context),
-            )
-          ],
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
+        }
+      },
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Container(
+          child: Column(
+            children: [
+              const AppBarMain(title: "Tạo mật khẩu"),
+              SizedBox(
+                height: size.height * 7 / 10,
+                child: warningCreatePassword == false
+                    ? _buildWarningCreatePassword(context)
+                    : _buildCreatePassword(context),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -111,8 +117,8 @@ class _CreatePasswordState extends State<CreatePassword> {
                 padding: const EdgeInsets.only(
                   left: 170,
                   right: 170,
-                  bottom: 20,
-                  top: 10,
+                  bottom: 16,
+                  top: 16,
                 ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
@@ -155,10 +161,12 @@ class _CreatePasswordState extends State<CreatePassword> {
             padding: const EdgeInsets.only(top: 12),
             child: Text(widget.phoneNumber),
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 32),
-            child: Text(
+          Container(
+            width: 300,
+            padding: const EdgeInsets.only(top: 32),
+            child: const Text(
               'Vui lòng tạo mật khẩu đăng nhập để có trải nghiệm tốt hơn',
+              textAlign: TextAlign.center,
             ),
           ),
           Padding(

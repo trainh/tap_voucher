@@ -12,38 +12,40 @@ class AppBarMain extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: size.height * 3 / 10,
-      child: Row(
-        children: [
-          Expanded(
-            flex: 3,
-            child: Container(
-              color: AppColor.secondColor,
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 20,
-                  bottom: 20,
-                ),
-                child: Text(
-                  title,
-                  style: AppStyles.h4.copyWith(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+      child: Container(
+        color: AppColor.secondColor,
+        child: Row(
+          children: [
+            Expanded(
+              flex: 5,
+              child: Container(
+                color: AppColor.secondColor,
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 20,
+                  ),
+                  child: Text(
+                    title,
+                    style: AppStyles.h4.copyWith(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            flex: 5,
-            child: Container(
-              color: AppColor.secondColor,
-              child: Image.asset(
-                AppAssets.logo,
+            Expanded(
+              flex: 7,
+              child: Container(
+                color: AppColor.secondColor,
+                child: Image.asset(
+                  AppAssets.logo,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

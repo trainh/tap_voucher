@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tap_voucher/models/voucher.dart';
 import 'package:tap_voucher/values/app_colors.dart';
-import 'package:tap_voucher/widgets/vouchers/voucher_used_details.dart';
+import 'package:tap_voucher/widgets/lists/details_voucher.dart';
 
 class ListVoucherVertical extends StatelessWidget {
   const ListVoucherVertical({Key? key, required this.listVoucher})
@@ -19,7 +19,7 @@ class ListVoucherVertical extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => VoucherUsedDetails(
+                    builder: (context) => DetailsVoucher(
                       voucher: listVoucher[index],
                     ),
                   ),

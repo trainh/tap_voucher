@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:tap_voucher/screens/home.dart';
-import 'package:tap_voucher/screens/login_page.dart';
+import 'package:tap_voucher/screens/user/home.dart';
+import 'package:tap_voucher/screens/user/login_page.dart';
 import 'package:tap_voucher/values/app_assets.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 import 'package:tap_voucher/values/app_fonts.dart';
