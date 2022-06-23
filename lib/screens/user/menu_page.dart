@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:tap_voucher/screens/user/login_page.dart';
@@ -284,7 +282,7 @@ class MenuPage extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const MenuPage()),
+            MaterialPageRoute(builder: (context) => page),
           );
         },
         child: Row(
