@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:tap_voucher/models/voucher.dart';
-import 'package:tap_voucher/screens/user/review_page.dart';
-import 'package:tap_voucher/screens/user/see_review_page.dart';
+import 'package:tap_voucher/screens/review_page.dart';
+import 'package:tap_voucher/screens/see_review_page.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 import 'package:tap_voucher/values/app_fonts.dart';
 

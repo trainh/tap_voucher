@@ -19,15 +19,7 @@ class NoticePage extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.only(left: 10, top: 10),
-            ),
-          ],
-        ),
-      ),
+      body: SingleChildScrollView(),
     );
   }
 }
