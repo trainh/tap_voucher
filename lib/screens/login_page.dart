@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tap_voucher/screens/user/create_password.dart';
-import 'package:tap_voucher/screens/user/forget_password.dart';
-import 'package:tap_voucher/screens/user/home.dart';
+import 'package:tap_voucher/screens/create_password.dart';
+import 'package:tap_voucher/screens/forget_password.dart';
+import 'package:tap_voucher/screens/home.dart';
 
 import 'package:tap_voucher/values/app_assets.dart';
 import 'package:tap_voucher/values/app_colors.dart';

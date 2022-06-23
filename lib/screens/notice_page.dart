@@ -28,13 +28,15 @@ class NoticePage extends StatelessWidget {
             (index) => (GestureDetector(
               onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => DetailsVoucher(
-                            voucher: getListVoucherUsed()[index])));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        DetailsVoucher(voucher: getListVoucherUsed()[index]),
+                  ),
+                );
               },
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
                       color: AppColor.secondColor,
@@ -49,7 +51,7 @@ class NoticePage extends StatelessWidget {
                       child: RichText(
                         text: TextSpan(
                           children: [
-                            WidgetSpan(
+                            const WidgetSpan(
                               child: Icon(
                                 Icons.discount,
                                 color: Colors.orange,
@@ -70,7 +72,7 @@ class NoticePage extends StatelessWidget {
                     ),
                     Container(
                       alignment: Alignment.centerLeft,
-                      padding: EdgeInsets.only(left: 40),
+                      padding: const EdgeInsets.only(left: 40),
                       child: Text(getListVoucherUsed()[index].sale),
                     ),
                   ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:tap_voucher/screens/user/login_page.dart';
-import 'package:tap_voucher/screens/user/service_page.dart';
+import 'package:tap_voucher/screens/login_page.dart';
+import 'package:tap_voucher/screens/service_page.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 
 class MenuPage extends StatelessWidget {

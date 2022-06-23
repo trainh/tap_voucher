@@ -1,8 +1,8 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:tap_voucher/screens/user/home_page.dart';
-import 'package:tap_voucher/screens/user/user_page.dart';
-import 'package:tap_voucher/screens/user/voucher_page.dart';
+import 'package:tap_voucher/screens/home_page.dart';
+import 'package:tap_voucher/screens/user_page.dart';
+import 'package:tap_voucher/screens/voucher_page.dart';
 import 'package:tap_voucher/values/app_colors.dart';
 
 class Home extends StatefulWidget {
