@@ -328,13 +328,13 @@ class VoucherUsedDetails extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
-              width: 320,
-              child: ElevatedButton.icon(
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(AppColor.secondColor),
-                ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 20,
+                left: 100,
+                right: 100,
+              ),
+              child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -345,13 +345,23 @@ class VoucherUsedDetails extends StatelessWidget {
                     ),
                   );
                 },
-                label: const Text(
-                  'Đánh giá',
-                  style:
-                      TextStyle(color: AppColor.textButtonColor, fontSize: 32),
+                style: ElevatedButton.styleFrom(
+                  primary: AppColor.buttonColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15), // <-- Radius
+                  ),
                 ),
-                icon: const Icon(Icons.rate_review,
-                    color: AppColor.textButtonColor, size: 32),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(Icons.rate_review,
+                        color: AppColor.textButtonColor, size: 32),
+                    Text(
+                      'Đánh giá',
+                      style: TextStyle(color: Colors.black, fontSize: 28),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

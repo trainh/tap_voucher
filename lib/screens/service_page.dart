@@ -62,7 +62,7 @@ class ServicePage extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Text(listFood[index].name),
-                      )
+                      ),
                     ],
                   );
                 },
