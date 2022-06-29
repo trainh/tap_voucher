@@ -36,6 +36,7 @@ class NoticePage extends StatelessWidget {
                 );
               },
               child: Container(
+                padding: const EdgeInsets.all(10.0),
                 decoration: const BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
